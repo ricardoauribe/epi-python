@@ -1,4 +1,5 @@
 # Closest number with same weight
+# Complexity O(n) in case we need to traverse the whole number + 1 location
 print("Closest number with same weight")
 # 7 = 0111
 def closest_int_same_bit_count(x: int) -> int:
