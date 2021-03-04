@@ -9,6 +9,8 @@ def multiply(x: int, y:int) -> int:
 	def add(a,b):
 		print("{0:b}".format(a))
 		print("{0:b}".format(b))
+		# If there is nothing to add return the number
+		# Else return the sum of a + b with the xor operation + the carry over with the and operation shifted by 1 location
 		return a if b == 0 else add(a ^ b, (a & b) << 1)
 
 	running_sum = 0
@@ -25,5 +27,5 @@ def multiply(x: int, y:int) -> int:
 		print(y, " y = ", "{0:b}".format(y))
 	return  running_sum
 
-ans2 = multiply(3,9)
+ans2 = multiply(7,9)
 print(ans2)
