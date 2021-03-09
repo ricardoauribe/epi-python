@@ -39,4 +39,19 @@ new_b2 = copy.deepcopy(b)
 b[0][0] = 44
 print(new_b2)
 print(b)
- 
+
+#Reverse
+a.reverse() 
+print(a)
+
+#Sort
+a.sort()
+print(a)
+
+#Slicing - TODO: Add all operations in page 41
+d = a[2:]
+print(d)
+
+#List comprehension example
+c=[x**2 for x in range(6)]
+print(c)
