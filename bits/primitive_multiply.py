@@ -1,4 +1,5 @@
 # Multiply
+# Complexity sum O(n) sum is executed n times per each bit set in 1 so final O(n) = O(n2)
 print("Multiply")
 
 def multiply(x: int, y:int) -> int:
