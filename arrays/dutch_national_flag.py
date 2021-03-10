@@ -1,5 +1,5 @@
 #Dutch national Flag pp41
-#Complexity:
+#Complexity: O(n) since it covers the array once, space O(1), since no additional memory
 
 def dutch_flag_partition(pivot_index: int, A: [int]) -> None:
 	#Get value at selected index
