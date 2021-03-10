@@ -6,24 +6,24 @@ def dutch_flag_partition(pivot_index: int, A: [int]) -> None:
 	pivot = A[pivot_index]
 	#Get pointers to 3 sections of the array smaller than pivot, equal and larger
 	smaller = 0
-	equal = 0
+	current = 0
 	larger = len(A)
-	while equal < larger:
+	while current < larger:
 		#If current value is smaller than the pivot swap with the latest that's equal
-		if A[equal] < pivot:
+		if A[current] < pivot:
 			temp = A[smaller]
-			A[smaller] = A[equal]
-			A[equal] = temp
-			equal += 1
+			A[smaller] = A[current]
+			A[current] = temp
+			current += 1
 			smaller +=1
 		#If current value is equal to the pivot do nothing and move equal pointer
-		elif A[equal] == pivot:
-			equal += 1
+		elif A[current] == pivot:
+			current += 1
 		#If current value is greater than the pivot move it to larger section and decrease in one the pointer
 		else:
 			larger -= 1
-			temp = A[equal]
-			A[equal] = A[larger]
+			temp = A[current]
+			A[current] = A[larger]
 			A[larger] = temp
 	print(A)
 
