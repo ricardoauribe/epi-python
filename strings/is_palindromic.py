@@ -13,3 +13,7 @@ def is_palindromic(s: str) -> bool:
 print(is_palindromic("aabaa"))
 print(is_palindromic("aa"))
 print(is_palindromic("aabaad"))
+
+a = 0
+b = ~a
+print(b)
