@@ -66,3 +66,6 @@ print(e)
 
 #Ord - Get ascii code for a char
 print(ord('A'))
+
+stimnumber =[[1,1,1,1,4,4,4,4,8,8,8,8,9,9,9,9,0,0,0,0]]
+for i in stimnumber[0][::4]: print(i)
