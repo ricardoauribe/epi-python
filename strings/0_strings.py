@@ -63,3 +63,6 @@ print(f.lower())
 # Substitute
 e = 'Name: {name}, Rank: {rank}'.format(name='Ricardo', rank='Apprentice')
 print(e)
+
+#Ord - Get ascii code for a char
+print(ord('A'))
