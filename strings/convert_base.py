@@ -5,6 +5,9 @@ import string
 
 def convert_base(num_as_string: str, b1: int, b2: int) ->str:
 	def construct_from_base(num_as_int, base):
+		# If the received number is 0 then break else do an integer division by the base 
+		# calling the construct from base function and concatenate the module result  
+		# converted to a hex value
 		return ('' if num_as_int == 0 else 
 						construct_from_base(num_as_int // base, base)+
 						string.hexdigits[num_as_int % base].upper())
