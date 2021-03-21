@@ -1,5 +1,6 @@
 # Convert base pp73
-# Time Complexity O(n), Space Complexity O(n)
+# Time Complexity O(n(1 +log b2 * b1)) - we perform n mutiplys and additions  then we perform  logb b2  x
+# where x is bounded by bn and log b2 *bn = nlogb2 * b1, Space Complexity O(n)
 import functools
 import string
 
@@ -20,7 +21,8 @@ def convert_base(num_as_string: str, b1: int, b2: int) ->str:
 	# Reduce will save the accumulated value
 	# functools.reduce(function, iterable[, initializer])
 	# string.hexdigits will give the hexadecimal letters ‘0123456789abcdefABCDEF’.
-	# function: lambda 
+	# function: lambda multiply each item * base1 and attaches it to a string coverting that number to base 16
+	# which should cover all elements per the problem definition
 	# iterable: string without - sign
 	# initializer: 0
 	# this calculated the integer base 16 version of the number
