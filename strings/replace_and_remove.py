@@ -1,5 +1,6 @@
 # Replace and Remove pp74
-# Time Complexity O(n), Space Complexity O(n)
+# Time Complexity O(n) -> 2 passes to the sting lenght, Space Complexity O(1) 
+# All happened in place no additional space needed
 from typing import List
 
 def replace_and_remove(size:int, s: List[str]) -> int:
@@ -14,7 +15,7 @@ def replace_and_remove(size:int, s: List[str]) -> int:
         if s[i] == 'a':
             a_count += 1
 
-    # Backwar iteration: replace 'a's with 'dd's starting from the end
+    # Backward iteration: replace 'a's with 'dd's starting from the end
     curr_idx = write_idx - 1
     write_idx += a_count - 1
     final_size = write_idx + 1
