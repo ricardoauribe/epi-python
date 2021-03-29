@@ -12,3 +12,11 @@ def search_list(L:ListNode, key: int) ->ListNode:
 		L = L.next
 	# If key was nt present in the list, L will have become null
 	return L
+
+# Insert new node after node
+
+def insert_after(node: ListNode, new_node: ListNode) ->None:
+	new_node.next = node.next
+	node.next = new_node
+
+# Delete a node
