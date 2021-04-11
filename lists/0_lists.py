@@ -10,7 +10,7 @@ class ListNode:
 def search_list(L:ListNode, key: int) ->ListNode:
 	while L and L.data != key:
 		L = L.next
-	# If key was nt present in the list, L will have become null
+	# If key was not present in the list, L will have become null
 	return L
 
 # Insert new node after node O(1)
