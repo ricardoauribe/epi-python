@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 #Merge 2 sorted lists pp 86
-#Complexity: O(n) since it covers the array once, space O(1), since no additional memory
+#Complexity: O(n + m) where m + n are the lenghts of the 2 lists, space O(1), since no additional memory
 
 from ListNode import ListNode
 
 def merge_two_sorted_lists(l1: [ListNode], l2: [ListNode]) ->[ListNode]:
 	# Creates a placeholder for the result
-	head = tail = ListNode()
-
+	head = ListNode()
+	tail = head
+	# Start building tail with the smaller value and move pointer of the list where it got used
 	while l1 and l2:
 		if l1.data <= l2.data:
 			tail.next = l1
@@ -15,7 +16,7 @@ def merge_two_sorted_lists(l1: [ListNode], l2: [ListNode]) ->[ListNode]:
 		else:
 			tail.next = l2
 			l2 = l2.next
-
+		# move tail to the actual node that was smaller
 		tail = tail.next
 	
 	# Append the remaining nodes
