@@ -5,17 +5,21 @@
 from ListNode import ListNode
 
 def reverse_sublist(l: ListNode, start: int, end:int) -> [ListNode]:
-	head = ListNode(0, l)
+	head = l
 	sublist_head = head
 
-	#Get to the starting point
-	for _ in range(1, start):
+	#Get to the starting point one node ahead
+	for _ in range(1, start-1):
 		sublist_head = sublist_head.next
 
-	#Now reverse the list
+	# Now reverse the list
+	# Get the first item to reverse
 	sublist_items = sublist_head.next
+	# For n inclusive iterations
 	for _ in range(end - start):
+		# Get next item to keep the pointer
 		temp = sublist_items.next
+		
 		sublist_items.next = temp.next
 		temp.next = sublist_head.next
 		sublist_head.next = temp
