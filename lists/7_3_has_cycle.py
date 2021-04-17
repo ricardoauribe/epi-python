@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Has Cycle pp 88
-#Complexity: O(f) where f is the final node to search, wort case could be the last so O(n), since no additional memory
+#Complexity: O(a) + O(b) where is the number of nodes to get to the cycle and b the number of nodes inside the cycle
+# Space O(1), no additional space was required, just pointers
 
 from ListNode import ListNode
 
