@@ -30,7 +30,7 @@ def has_cycle(head:ListNode) -> [ListNode]:
 
     #If they are the same we found a cycle
     if slow is fast:
-      # Whe achieve the start of the cycle
+      # We now there is a cycle, now we need to determine the start
       # Now we move back to head 
       cycle_len_advanced_iter = head
       for _ in range(cycle_len(slow)):
@@ -44,6 +44,25 @@ def has_cycle(head:ListNode) -> [ListNode]:
         cycle_len_advanced_iter = cycle_len_advanced_iter.next
       return it # iter is the start of the cycle
   return None # No cycle
+
+# Smaller solution
+def detect_cycle(self, head: ListNode) -> ListNode:
+  fast = head
+  slow = head
+  
+  while fast and fast.next and fast.next.next:
+    slow = slow.next
+    fast = fast.next.next
+    # Detect cycle
+    if slow is fast:
+      slow = head
+      # Find cycle start
+      while slow is not fast:
+        slow = slow.next
+        fast = fast.next
+      return slow
+  return None
+            
 
 
 a = ListNode(11)
@@ -63,3 +82,5 @@ f.next = c
 ans = has_cycle(a)
 print(ans.data)
 
+ans2 = detect_cycle(a)
+print(ans2.data)
