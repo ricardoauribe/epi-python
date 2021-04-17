@@ -46,7 +46,7 @@ def has_cycle(head:ListNode) -> [ListNode]:
   return None # No cycle
 
 # Smaller solution
-def detect_cycle(self, head: ListNode) -> ListNode:
+def detect_cycle(head: ListNode) -> ListNode:
   fast = head
   slow = head
   
