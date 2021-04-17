@@ -6,6 +6,9 @@
 from ListNode import ListNode
 
 def has_cycle(head:ListNode) -> [ListNode]:
+  
+  # This function completes a full cycle to determine it's lenght
+  # when start is equal to end we now we finish where whe started
   def cycle_len(end):
     start = end
     step = 0
@@ -15,21 +18,27 @@ def has_cycle(head:ListNode) -> [ListNode]:
       if start is end:
         return step
 
+  # Creating 2 points that will move at different speeds
   fast = head
   slow = head
 
+  # While the fast one has a next node we will iterate
   while fast and fast.next:
+    # Moving the fast one twice as fast
     slow = slow.next
     fast = fast.next.next
 
+    #If they are the same we found a cycle
     if slow is fast:
       # Whe achieve the start of the cycle
+      # Now we move back to head 
       cycle_len_advanced_iter = head
       for _ in range(cycle_len(slow)):
-        cycle_len_advanced_iter =cycle_len_advanced_iter.next
+        # We determine how many nodes from start to the point where the cycle started
+        cycle_len_advanced_iter = cycle_len_advanced_iter.next
 
       it = head
-      # Both iterators advance in tandem
+      # Both iterators advance at the same speed
       while it is not cycle_len_advanced_iter:
         it = it.next
         cycle_len_advanced_iter = cycle_len_advanced_iter.next
@@ -37,10 +46,20 @@ def has_cycle(head:ListNode) -> [ListNode]:
   return None # No cycle
 
 
-com = ListNode(66)
-#com.print_list()
-a = ListNode(11, ListNode(3, ListNode(5, ListNode(7, ListNode(2, com)))))
-com.next = a
+a = ListNode(11)
+b = ListNode(3)
+c = ListNode(5)
+d= ListNode(7)
+e = ListNode(2)
+f = ListNode(66)
+
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+e.next = f
+f.next = c
+
 ans = has_cycle(a)
 print(ans.data)
 
