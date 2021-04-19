@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Overlapping Lists with no cycle pp 90
-# Complexity: O(n)
+# Complexity: O(n), where n is the lenght of the longest list
 # Space O(1), no additional space was required, just pointers
 
 from ListNode import ListNode
@@ -34,7 +34,7 @@ def overlapping_no_cycle_lists(l0: ListNode, l1: ListNode) -> ListNode:
   while l0p and l1p and l0p is not l1p:
     l0p = l0p.next
     l1p = l1p.next
-    
+
   # If we get to the last one and get to None it implies there was no overlap
   return l0p
 
