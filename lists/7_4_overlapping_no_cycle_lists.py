@@ -6,6 +6,7 @@
 from ListNode import ListNode
 
 def overlapping_no_cycle_lists(l0: ListNode, l1: ListNode) -> ListNode:
+  # Function to calculate list Length
   def length(l: ListNode):
     length = 0
     while l:
@@ -13,27 +14,27 @@ def overlapping_no_cycle_lists(l0: ListNode, l1: ListNode) -> ListNode:
       l = l.next
     return length
 
+  # Get list lengths
   l0_len = length(l0)
   l1_len = length(l1)
 
+  # make it so l1 is the longer list
   if l0_len > l1_len:
-    # make it so l1 is the longer list
     l0p = l1
     l1p = l0
   else:
     l0p = l0
     l1p = l1
 
-  print(l0p.data)
-  print(l1p.data)
-
   # We advance the longer list to get the equal length lists
   for _ in range(abs(l0_len - l1_len)):
     l1p = l1p.next
 
+  # While there are elements in the list check if they are the same at both lists
   while l0p and l1p and l0p is not l1p:
     l0p = l0p.next
     l1p = l1p.next
+    
   # If we get to the last one and get to None it implies there was no overlap
   return l0p
 
