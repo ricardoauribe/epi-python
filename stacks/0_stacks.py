@@ -1,0 +1,1 @@
+# Basic Methods for Stacks
